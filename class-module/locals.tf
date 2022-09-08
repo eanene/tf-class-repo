@@ -7,6 +7,10 @@ default_tags = {
 
 data_subnets = { for a, b in aws_subnet.tf-class-data-subnet : a => b }
 
+public_subnet = { for a, b in aws_subnet.tf-class-public-subnet : a => b }
+
+eip = { for i, v in aws_eip.nat_eip : i => v }
+
 name_secret_value  = jsondecode(data.aws_secretsmanager_secret_version.db_name_version.secret_string)
 
 password_secret_value  = jsondecode(data.aws_secretsmanager_secret_version.db_password_version.secret_string)

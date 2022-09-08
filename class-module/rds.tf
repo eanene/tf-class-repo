@@ -1,16 +1,13 @@
 resource "aws_rds_cluster" "tf-class-rds-cluster" {
   cluster_identifier = "${var.env}-tf-class-rds-cluster"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  # availability_zones = ["us-east-1a", "us-east-1b"]
   database_name      = "tfclassdb"
   master_username    = local.name_secret_value.database_name
   master_password    = local.password_secret_value.database_password
   engine = "aurora-postgresql"
   engine_version = "12.11"
   db_subnet_group_name = aws_db_subnet_group.tf-class-subnet-group.name
-
-  
-
-
+  vpc_security_group_ids = [ aws_security_group.db_sg.id ]
 }
 
 
@@ -34,12 +31,11 @@ resource "aws_db_subnet_group" "tf-class-subnet-group" {
   # for_each = local.data_subnets
   name       = "${var.env}-tf-class-subnet-group"
   subnet_ids = concat([for subnet in aws_subnet.tf-class-data-subnet: subnet.id])
+  
 
-  tags = merge(
-    { Name = "${var.env}-tf-class-subnet-group" },
-
-    local.default_tags
-  )
+  tags = {
+    Name = "${var.env}-tf-class-subnet-group" 
+  }
 }
 
 resource "aws_rds_cluster_instance" "tf-class-cluster-instances" {
@@ -50,6 +46,7 @@ resource "aws_rds_cluster_instance" "tf-class-cluster-instances" {
   engine             = aws_rds_cluster.tf-class-rds-cluster.engine
   engine_version     = aws_rds_cluster.tf-class-rds-cluster.engine_version
   db_subnet_group_name = aws_db_subnet_group.tf-class-subnet-group.name
+
 
   depends_on = [
     aws_rds_cluster.tf-class-rds-cluster

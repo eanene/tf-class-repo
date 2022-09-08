@@ -1,3 +1,4 @@
-# variable "my_region" {
-#     type = string
-# }
+variable "env" {
+  type    = string
+  default = "dev"
+}

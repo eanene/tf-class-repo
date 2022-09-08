@@ -2,12 +2,10 @@
 resource "aws_efs_file_system" "tf-class-efs" {
   creation_token = "${var.env}-class-efs"
 
-  tags = merge(
-    { Name = "${var.env}-class-efs" },
-    local.default_tags
-  )
+  tags = {
+     Name = "${var.env}-class-efs" 
 }
-
+}
 
 
 resource "aws_efs_mount_target" "alpha" {

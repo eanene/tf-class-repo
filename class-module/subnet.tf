@@ -4,12 +4,9 @@ resource "aws_subnet" "tf-class-data-subnet" {
   cidr_block = each.value.cidr 
   availability_zone = each.value.availability_zone
 
-  tags = merge(
-    { Name = "${each.value.name}-${var.env}" },
-
-    local.default_tags
-  )
-  
+  tags = {
+     Name = "${each.value.name}-${var.env}" 
+  }
 }
 
 resource "aws_subnet" "tf-class-app-subnet" {
@@ -18,11 +15,11 @@ resource "aws_subnet" "tf-class-app-subnet" {
   cidr_block = each.value.cidr 
   availability_zone = each.value.availability_zone
 
-  tags = merge(
-    { Name = "${each.value.name}-${var.env}" },
+  tags = {
+    Name = "${each.value.name}-${var.env}" 
+  }
 
-    local.default_tags
-  )
+    
   
 }
 
@@ -32,10 +29,8 @@ resource "aws_subnet" "tf-class-public-subnet" {
   cidr_block = each.value.cidr 
   availability_zone = each.value.availability_zone
 
-  tags = merge(
-    { Name = "${each.value.name}-${var.env}" },
+  tags = {
+    Name = "${each.value.name}-${var.env}" 
+  }
 
-    local.default_tags
-  )
-  
 }

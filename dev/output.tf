@@ -1,8 +1,8 @@
 output "devtest" {
-    value = module.dev.test
+  value = module.dev.test
 }
 
-# output "test" {
-#     value = module.dev.dbname
-  
-# }
+output "devtest2" {
+    value = module.dev.test2
+
+}
