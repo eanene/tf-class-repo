@@ -31,3 +31,7 @@ variable "public_subnets" {
     description = "public subnets"
 }
   
+  variable "eip_names" {
+    type = list(string)
+    
+  }
