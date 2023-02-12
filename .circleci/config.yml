@@ -12,11 +12,11 @@ jobs:
       - run: ls
       - run: pwd
       - run: 
-        name: go into dev
-        command: cd dev
+          name: go into dev
+          command: cd dev
       - run: 
-        name: init
-        command: terraform init
+          name: init
+          command: terraform init
       
   plan:
     docker:
