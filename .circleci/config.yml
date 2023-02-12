@@ -26,7 +26,7 @@ jobs:
       - checkout
 #       - attach_workspace:
 #            at: ~/tf-class-repo
-      - run: cd dev && terraform init && terraform apply --auto-aprove
+      - run: cd dev && terraform init && terraform apply -auto-aprove
 
 # Orchestrate our job run sequence
 workflows:
