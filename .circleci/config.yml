@@ -20,8 +20,7 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - run: cd dev
-      - run: terraform plan
+      - run: cd dev && terraform plan
   apply:
     docker:
       - image: hashicorp/terraform
