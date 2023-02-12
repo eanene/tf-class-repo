@@ -12,12 +12,12 @@ jobs:
       - run: 
           name: present_working
           command: 'pwd'
-      - run: 
-          name: list
-          command: 'ls ~/tf-class-repo'
+#       - run: 
+#           name: list
+#           command: 'ls ~/tf-class-repo'
       - run: 
           name: go into dev
-          command: 'cd ~/tf-class-repo/dev/'
+          command: 'cd ~/tf-class-repo && cd dev && ls'
       - run: 
           name: init
           command: terraform init
