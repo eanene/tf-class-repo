@@ -43,6 +43,7 @@ module "dev" {
     }
   }
   tf-class-db-names = ["dev-primary", "dev-read-replica"]
+  eip_names = [ "eip_1", "eip_2"]
 
 
 }
