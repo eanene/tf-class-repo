@@ -5,11 +5,11 @@ jobs:
   init:
     docker:
       - image: hashicorp/terraform
-    working_directory: ~/tf-class-repo
+    working_directory: ~/tf-class-repo/dev
     steps:      
       - checkout
       - run: ls
-      - run: cd /dev
+#       - run: cd /dev
       - run: pwd
       - run: ls
       - run: terraform -chdir=/dev init 
