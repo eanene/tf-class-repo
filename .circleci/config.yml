@@ -9,23 +9,11 @@ jobs:
       - image: hashicorp/terraform
     working_directory: ~/tf-class-repo
     steps:      
-      - run: 
-          name: present_working
-          command: 'pwd && ls -al'
       - checkout
       - run: 
           name: present_working_2
-          command: 'pwd && ls -al && cd dev && ls -al'
+          command: 'pwd && ls -al && cd dev && ls -al && terraform init'
       
-      - run: 
-          name: get into dev
-          command: 'cd dev'
-#       - run: 
-#           name: go into dev
-#           command: 'cd ./dev && terraform init'
-      - run: 
-          name: init
-          command: terraform init
       
   plan:
     docker:
