@@ -9,7 +9,8 @@ jobs:
     steps:      
       - checkout
       - run: ls
-      - run: cd dev
+      - run: 
+        command: cd dev
       - run: pwd
       - run: ls
       - run: terraform -chdir=/dev init 
