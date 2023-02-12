@@ -11,8 +11,8 @@ jobs:
       - run: ls
 #       - run: cd /dev
       - run: pwd
-      - run: ls
-      - run: terraform -chdir=/dev init 
+      - run: ls tf-class-repo/dev
+      - run: terraform -chdir=tf-class-repo/dev init 
       
   plan:
     docker:
