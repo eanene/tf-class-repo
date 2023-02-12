@@ -4,7 +4,7 @@ version: 2.1
 
 # Define the jobs we want to run for this project
 jobs:
-  initialize:
+  initialize: &init
     docker:
       - image: hashicorp/terraform
     working_directory: ~/tf-class-repo
@@ -19,8 +19,9 @@ jobs:
     docker:
       - image: hashicorp/terraform
     steps:
-      - checkout
-      - run: cd dev && terraform plan
+      <<: *init
+#       - checkout
+      - run: terraform plan
   apply:
     docker:
       - image: hashicorp/terraform
