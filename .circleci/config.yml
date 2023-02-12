@@ -11,10 +11,10 @@ jobs:
     steps:      
       - run: 
           name: present_working
-          command: 'pwd'
-      - run: 
-          name: list
-          command: 'ls -al'
+          command: 'pwd && ls -al'
+#       - run: 
+#           name: list
+#           command: 'ls -al'
 #       - run: 
 #           name: go into dev
 #           command: 'cd ./dev && terraform init'
