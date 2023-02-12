@@ -7,7 +7,9 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
+      - run: pwd
       - run: cd dev
+      - run: ls
       - run: terraform init 
       
   plan:
