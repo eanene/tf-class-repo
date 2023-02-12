@@ -7,7 +7,7 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
-      - working_directory: ~/dev
+      - run: cd ~/tf-class-repo/dev
       - run: terraform init 
       
   plan:
