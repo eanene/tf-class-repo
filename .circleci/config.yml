@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: 
           name: present_working_2
-          command: 'pwd && ls -al'
+          command: 'pwd && ls -al && cd dev && ls -al'
       
 #       - run: 
 #           name: list
