@@ -17,15 +17,15 @@ jobs:
           name: present_working_2
           command: 'pwd && ls -al && cd dev && ls -al'
       
-#       - run: 
-#           name: list
-#           command: 'ls -al'
+      - run: 
+          name: get into dev
+          command: 'cd dev'
 #       - run: 
 #           name: go into dev
 #           command: 'cd ./dev && terraform init'
-#       - run: 
-#           name: init
-#           command: terraform init
+      - run: 
+          name: init
+          command: terraform init
       
   plan:
     docker:
