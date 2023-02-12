@@ -6,6 +6,7 @@ jobs:
     docker:
       - image: hashicorp/terraform
     steps:
+      - working_directory: ~/dev
       - checkout
 #       - working_directory: ~/dev
       - run: ls
