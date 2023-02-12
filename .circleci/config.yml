@@ -11,7 +11,7 @@ jobs:
     steps:      
       - run: 
           name: present_working
-          command: 'pwd && ls -al'
+          command: 'pwd && cd tf-class-repo && ls -al'
 #       - run: 
 #           name: list
 #           command: 'ls -al'
