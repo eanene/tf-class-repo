@@ -17,7 +17,7 @@ jobs:
           command: 'ls'
       - run: 
           name: go into dev
-          command: 'cd ~/tf-class-repo/dev'
+          command: 'cd ~/tf-class-repo/dev/'
       - run: 
           name: init
           command: terraform init
