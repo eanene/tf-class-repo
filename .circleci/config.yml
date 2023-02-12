@@ -41,10 +41,10 @@ jobs:
 workflows:
   init_and_plan:
     jobs:
-      - init
+      - initialize
       - plan:
           requires:
-            - init
+            - initialize
       - apply:
           requires:
             - plan
