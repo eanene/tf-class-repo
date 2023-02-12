@@ -14,7 +14,7 @@ jobs:
           command: 'pwd'
       - run: 
           name: list
-          command: 'ls ~/tf-class-repo'
+          command: 'ls -al'
 #       - run: 
 #           name: go into dev
 #           command: 'cd ./dev && terraform init'
