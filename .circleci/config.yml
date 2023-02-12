@@ -18,8 +18,8 @@ jobs:
   plan:
     docker:
       - image: hashicorp/terraform
+    <<: *init
     steps:
-      <<: *init
 #       - checkout
       - run: terraform plan
   apply:
