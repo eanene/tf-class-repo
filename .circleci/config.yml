@@ -7,11 +7,16 @@ jobs:
   initialize:
     docker:
       - image: hashicorp/terraform
-    working_directory: ~/tf-class-repo/dev
+    working_directory: ~/tf-class-repo
     steps:      
       - run: 
           name: present_working
           command: 'pwd && ls -al'
+      - checkout
+      - run: 
+          name: present_working_2
+          command: 'pwd && ls -al'
+      
 #       - run: 
 #           name: list
 #           command: 'ls -al'
